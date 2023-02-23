@@ -1,0 +1,457 @@
+<!DOCTYPE html><html lang="zh-CN" ><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta name="prefer-datetime-locale" content="zh-cn"><meta name="generator" content="Jekyll v4.2.2" /><meta property="og:title" content="个人 clang-format-15 配置文件" /><meta property="og:locale" content="zh_CN" /><meta name="description" content="配置文件 ```yaml DisableFormat: false Tab &amp; Indent TabWidth: 4 IndentWidth: 4 PPIndentWidth: 4 UseCRLF: false UseTab: Never" /><meta property="og:description" content="配置文件 ```yaml DisableFormat: false Tab &amp; Indent TabWidth: 4 IndentWidth: 4 PPIndentWidth: 4 UseCRLF: false UseTab: Never" /><link rel="canonical" href="https://blog.fr4nk1in.top/posts/clang_format/" /><meta property="og:url" content="https://blog.fr4nk1in.top/posts/clang_format/" /><meta property="og:site_name" content="Fr4nk1in" /><meta property="og:type" content="article" /><meta property="article:published_time" content="2021-05-16T16:45:00+08:00" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="个人 clang-format-15 配置文件" /><meta name="twitter:site" content="@Fr4nk1inCs" /><meta name="google-site-verification" content="zCE2IHwhC8gvNXzHqhiU76gjOJ1My1026M7RimxeEVE" /> <script type="application/ld+json"> {"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-07-22T22:24:14+08:00","datePublished":"2021-05-16T16:45:00+08:00","description":"配置文件 ```yaml DisableFormat: false Tab &amp; Indent TabWidth: 4 IndentWidth: 4 PPIndentWidth: 4 UseCRLF: false UseTab: Never","headline":"个人 clang-format-15 配置文件","mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.fr4nk1in.top/posts/clang_format/"},"url":"https://blog.fr4nk1in.top/posts/clang_format/"}</script><title>个人 clang-format-15 配置文件 | Fr4nk1in</title><link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png"><link rel="manifest" href="/assets/img/favicons/site.webmanifest"><link rel="shortcut icon" href="/assets/img/favicons/favicon.ico"><meta name="apple-mobile-web-app-title" content="Fr4nk1in"><meta name="application-name" content="Fr4nk1in"><meta name="msapplication-TileColor" content="#da532c"><meta name="msapplication-config" content="/assets/img/favicons/browserconfig.xml"><meta name="theme-color" content="#ffffff"><link rel="preconnect" href="https://fonts.googleapis.com" ><link rel="dns-prefetch" href="https://fonts.googleapis.com" ><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="dns-prefetch" href="https://fonts.gstatic.com" crossorigin><link rel="preconnect" href="https://fonts.googleapis.com" ><link rel="dns-prefetch" href="https://fonts.googleapis.com" ><link rel="preconnect" href="https://cdn.jsdelivr.net" ><link rel="dns-prefetch" href="https://cdn.jsdelivr.net" ><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap"><link rel="preconnect" href="https://www.google-analytics.com" crossorigin="use-credentials"><link rel="dns-prefetch" href="https://www.google-analytics.com"><link rel="preconnect" href="https://www.googletagmanager.com" crossorigin="anonymous"><link rel="dns-prefetch" href="https://www.googletagmanager.com"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css"><link rel="stylesheet" href="/assets/css/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/magnific-popup@1/dist/magnific-popup.min.css"> <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script> <script type="text/javascript"> class ModeToggle { static get MODE_KEY() { return "mode"; } static get MODE_ATTR() { return "data-mode"; } static get DARK_MODE() { return "dark"; } static get LIGHT_MODE() { return "light"; } static get ID() { return "mode-toggle"; } constructor() { if (this.hasMode) { if (this.isDarkMode) { if (!this.isSysDarkPrefer) { this.setDark(); } } else { if (this.isSysDarkPrefer) { this.setLight(); } } } let self = this; /* always follow the system prefers */ this.sysDarkPrefers.addEventListener("change", () => { if (self.hasMode) { if (self.isDarkMode) { if (!self.isSysDarkPrefer) { self.setDark(); } } else { if (self.isSysDarkPrefer) { self.setLight(); } } self.clearMode(); } self.notify(); }); } /* constructor() */ get sysDarkPrefers() { return window.matchMedia("(prefers-color-scheme: dark)"); } get isSysDarkPrefer() { return this.sysDarkPrefers.matches; } get isDarkMode() { return this.mode === ModeToggle.DARK_MODE; } get isLightMode() { return this.mode === ModeToggle.LIGHT_MODE; } get hasMode() { return this.mode != null; } get mode() { return sessionStorage.getItem(ModeToggle.MODE_KEY); } /* get the current mode on screen */ get modeStatus() { if (this.isDarkMode || (!this.hasMode && this.isSysDarkPrefer)) { return ModeToggle.DARK_MODE; } else { return ModeToggle.LIGHT_MODE; } } setDark() { $('html').attr(ModeToggle.MODE_ATTR, ModeToggle.DARK_MODE); sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE); } setLight() { $('html').attr(ModeToggle.MODE_ATTR, ModeToggle.LIGHT_MODE); sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE); } clearMode() { $('html').removeAttr(ModeToggle.MODE_ATTR); sessionStorage.removeItem(ModeToggle.MODE_KEY); } /* Notify another plugins that the theme mode has changed */ notify() { window.postMessage({ direction: ModeToggle.ID, message: this.modeStatus }, "*"); } } /* ModeToggle */ const toggle = new ModeToggle(); function flipMode() { if (toggle.hasMode) { if (toggle.isSysDarkPrefer) { if (toggle.isLightMode) { toggle.clearMode(); } else { toggle.setLight(); } } else { if (toggle.isDarkMode) { toggle.clearMode(); } else { toggle.setDark(); } } } else { if (toggle.isSysDarkPrefer) { toggle.setLight(); } else { toggle.setDark(); } } toggle.notify(); } /* flipMode() */ </script><body data-spy="scroll" data-target="#toc" data-topbar-visible="true"><div id="sidebar" class="d-flex flex-column align-items-end"><div class="profile-wrapper text-center"><div id="avatar"> <a href="/" class="mx-auto"> <img src="/assets/img/avatar.jpg" alt="avatar" onerror="this.style.display='none'"> </a></div><div class="site-title mt-3"> <a href="/">Fr4nk1in</a></div><div class="site-subtitle font-italic">A USTC Student</div></div><ul class="w-100"><li class="nav-item"> <a href="/" class="nav-link"> <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i> <span>首页</span> </a><li class="nav-item"> <a href="/categories/" class="nav-link"> <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i> <span>分类</span> </a><li class="nav-item"> <a href="/tags/" class="nav-link"> <i class="fa-fw fas fa-tag ml-xl-3 mr-xl-3 unloaded"></i> <span>标签</span> </a><li class="nav-item"> <a href="/archives/" class="nav-link"> <i class="fa-fw fas fa-archive ml-xl-3 mr-xl-3 unloaded"></i> <span>归档</span> </a><li class="nav-item"> <a href="/about/" class="nav-link"> <i class="fa-fw fas fa-info-circle ml-xl-3 mr-xl-3 unloaded"></i> <span>关于</span> </a></ul><div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center align-items-center"> <button class="mode-toggle btn" aria-label="Switch Mode"> <i class="fas fa-adjust"></i> </button> <span class="icon-border"></span> <a href="https://github.com/Fr4nk1in-USTC" aria-label="github" target="_blank" rel="noopener"> <i class="fab fa-github"></i> </a> <a href="https://twitter.com/Fr4nk1inCs" aria-label="twitter" target="_blank" rel="noopener"> <i class="fab fa-twitter"></i> </a> <a href=" javascript:location.href = 'mailto:' + ['fushen','mail.ustc.edu.cn'].join('@')" aria-label="email" > <i class="fas fa-envelope"></i> </a> <a href="/feed.xml" aria-label="rss" > <i class="fas fa-rss"></i> </a></div></div><div id="topbar-wrapper"><div id="topbar" class="container d-flex align-items-center justify-content-between h-100 pl-3 pr-3 pl-md-4 pr-md-4"> <span id="breadcrumb"> <span> <a href="/"> 首页 </a> </span> <span>个人 clang-format-15 配置文件</span> </span> <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i><div id="topbar-title"> 文章</div><i id="search-trigger" class="fas fa-search fa-fw"></i> <span id="search-wrapper" class="align-items-center"> <i class="fas fa-search fa-fw"></i> <input class="form-control" id="search-input" type="search" aria-label="search" autocomplete="off" placeholder="搜索..."> </span> <span id="search-cancel" >取消</span></div></div><div id="main-wrapper" class="d-flex justify-content-center"><div id="main" class="container pl-xl-4 pr-xl-4"><div class="row"><div id="core-wrapper" class="col-12 col-lg-11 col-xl-9 pr-xl-4"><div class="post pl-1 pr-1 pl-md-2 pr-md-2"><h1 data-toc-skip>个人 clang-format-15 配置文件</h1><div class="post-meta text-muted"> <span> 发表于 <em class="" data-ts="1621154700" data-df="YYYY-MM-DD" data-toggle="tooltip" data-placement="bottom"> 2021-05-16 </em> </span> <span> 更新于 <em class="" data-ts="1658499854" data-df="YYYY-MM-DD" data-toggle="tooltip" data-placement="bottom"> 2022-07-22 </em> </span><div class="d-flex justify-content-between"> <span> 作者 <em> <a href="https://twitter.com/Fr4nk1inCs">Fr4nk1in</a> </em> </span><div> <span class="readtime" data-toggle="tooltip" data-placement="bottom" title="760 字"> <em>4 分钟</em>阅读</span></div></div></div><div class="post-content"><h1 id="配置文件">配置文件</h1><div class="language-yaml highlighter-rouge"><div class="code-header"> <span data-label-text="YAML"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+</pre><td class="rouge-code"><pre><span class="na">DisableFormat</span><span class="pi">:</span> <span class="no">false</span>
+<span class="c1"># Tab &amp; Indent</span>
+<span class="na">TabWidth</span><span class="pi">:</span> <span class="m">4</span>
+<span class="na">IndentWidth</span><span class="pi">:</span> <span class="m">4</span>
+<span class="na">PPIndentWidth</span><span class="pi">:</span> <span class="m">4</span>
+<span class="na">UseCRLF</span><span class="pi">:</span> <span class="no">false</span>
+<span class="na">UseTab</span><span class="pi">:</span> <span class="s">Never</span>
+
+<span class="c1"># Configurations</span>
+<span class="na">AccessModifierOffset</span><span class="pi">:</span> <span class="s">-2</span>
+<span class="na">AlignAfterOpenBracket</span><span class="pi">:</span> <span class="s">Align</span>
+<span class="na">AlignArrayOfStructures</span><span class="pi">:</span> <span class="s">Right</span>
+<span class="na">AlignConsecutiveAssignments</span><span class="pi">:</span> 
+  <span class="na">Enabled</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="na">AcrossEmptyLines</span><span class="pi">:</span> <span class="no">false</span>
+  <span class="na">AcrossComments</span><span class="pi">:</span> <span class="no">false</span>
+  <span class="na">AlignCompound</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="na">PadOperators</span><span class="pi">:</span> <span class="no">false</span>
+<span class="na">AlignConsecutiveBitFields</span><span class="pi">:</span> 
+  <span class="na">Enabled</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="na">AcrossEmptyLines</span><span class="pi">:</span> <span class="no">false</span>
+  <span class="na">AcrossComments</span><span class="pi">:</span> <span class="no">false</span>
+  <span class="na">AlignCompound</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="na">PadOperators</span><span class="pi">:</span> <span class="no">false</span>
+<span class="na">AlignConsecutiveMacros</span><span class="pi">:</span> 
+  <span class="na">Enabled</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="na">AcrossEmptyLines</span><span class="pi">:</span> <span class="no">false</span>
+  <span class="na">AcrossComments</span><span class="pi">:</span> <span class="no">false</span>
+  <span class="na">AlignCompound</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="na">PadOperators</span><span class="pi">:</span> <span class="no">false</span>
+<span class="na">AlignConsecutiveDeclarations</span><span class="pi">:</span> 
+  <span class="na">Enabled</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="na">AcrossEmptyLines</span><span class="pi">:</span> <span class="no">false</span>
+  <span class="na">AcrossComments</span><span class="pi">:</span> <span class="no">false</span>
+  <span class="na">AlignCompound</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="na">PadOperators</span><span class="pi">:</span> <span class="no">false</span>
+<span class="na">AlignEscapedNewlines</span><span class="pi">:</span> <span class="s">Left</span>
+<span class="na">AlignOperands</span><span class="pi">:</span> <span class="s">AlignAfterOperator</span>
+<span class="na">AlignTrailingComments</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">AllowAllArgumentsOnNextLine</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">AllowAllParametersOfDeclarationOnNextLine</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">AllowShortBlocksOnASingleLine</span><span class="pi">:</span> <span class="s">Empty</span>
+<span class="na">AllowShortCaseLabelsOnASingleLine</span><span class="pi">:</span> <span class="no">false</span>
+<span class="na">AllowShortEnumsOnASingleLine</span><span class="pi">:</span> <span class="no">false</span>
+<span class="na">AllowShortFunctionsOnASingleLine</span><span class="pi">:</span> <span class="s">Inline</span>
+<span class="na">AllowShortIfStatementsOnASingleLine</span><span class="pi">:</span> <span class="s">Never</span>
+<span class="na">AllowShortLambdasOnASingleLine</span><span class="pi">:</span> <span class="s">Inline</span>
+<span class="na">AllowShortLoopsOnASingleLine</span><span class="pi">:</span> <span class="no">false</span>
+<span class="na">AlwaysBreakAfterDefinitionReturnType</span><span class="pi">:</span> <span class="s">None</span>
+<span class="na">AlwaysBreakAfterReturnType</span><span class="pi">:</span> <span class="s">None</span>
+<span class="na">AlwaysBreakBeforeMultilineStrings</span><span class="pi">:</span> <span class="no">false</span>
+<span class="na">AlwaysBreakTemplateDeclarations</span><span class="pi">:</span> <span class="s">MultiLine</span>
+<span class="na">BinPackArguments</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">BinPackParameters</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">BitFieldColonSpacing</span><span class="pi">:</span> <span class="s">After</span>
+<span class="na">BraceWrapping</span><span class="pi">:</span>
+  <span class="na">AfterCaseLabel</span><span class="pi">:</span> <span class="no">false</span>
+  <span class="na">AfterClass</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="na">AfterControlStatement</span><span class="pi">:</span> <span class="s">MultiLine</span>
+  <span class="na">AfterEnum</span><span class="pi">:</span> <span class="no">false</span>
+  <span class="na">AfterFunction</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="na">AfterNamespace</span><span class="pi">:</span> <span class="no">false</span>
+  <span class="na">AfterStruct</span><span class="pi">:</span> <span class="no">false</span>
+  <span class="na">AfterUnion</span><span class="pi">:</span> <span class="no">false</span>
+  <span class="na">AfterExternBlock</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="na">BeforeCatch</span><span class="pi">:</span> <span class="no">false</span>
+  <span class="na">BeforeElse</span><span class="pi">:</span> <span class="no">false</span>
+  <span class="na">BeforeLambdaBody</span><span class="pi">:</span> <span class="no">false</span>
+  <span class="na">BeforeWhile</span><span class="pi">:</span> <span class="no">false</span>
+  <span class="na">SplitEmptyFunction</span><span class="pi">:</span> <span class="no">false</span>
+  <span class="na">SplitEmptyRecord</span><span class="pi">:</span> <span class="no">false</span>
+  <span class="na">SplitEmptyNamespace</span><span class="pi">:</span> <span class="no">false</span>
+<span class="na">BreakAfterJavaFieldAnnotations</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">BreakBeforeBinaryOperators</span><span class="pi">:</span> <span class="s">NonAssignment</span>
+<span class="na">BreakBeforeBraces</span><span class="pi">:</span> <span class="s">Custom</span>
+<span class="na">BreakBeforeConceptDeclarations</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">BreakBeforeTernaryOperators</span><span class="pi">:</span> <span class="no">false</span>
+<span class="na">BreakConstructorInitializers</span><span class="pi">:</span> <span class="s">AfterColon</span>
+<span class="na">BreakInheritanceList</span><span class="pi">:</span> <span class="s">AfterColon</span>
+<span class="na">BreakStringLiterals</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">ColumnLimit</span><span class="pi">:</span> <span class="m">80</span>
+<span class="na">CompactNamespaces</span><span class="pi">:</span> <span class="no">false</span>
+<span class="na">ConstructorInitializerIndentWidth</span><span class="pi">:</span> <span class="m">4</span>
+<span class="na">ContinuationIndentWidth</span><span class="pi">:</span> <span class="m">4</span>
+<span class="na">Cpp11BracedListStyle</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">DeriveLineEnding</span><span class="pi">:</span> <span class="no">false</span>
+<span class="na">DerivePointerAlignment</span><span class="pi">:</span> <span class="no">false</span>
+<span class="na">EmptyLineAfterAccessModifier</span><span class="pi">:</span> <span class="s">Never</span>
+<span class="na">EmptyLineBeforeAccessModifier</span><span class="pi">:</span> <span class="s">Always</span>
+<span class="na">FixNamespaceComments</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">IncludeBlocks</span><span class="pi">:</span> <span class="s">Regroup</span>
+<span class="na">IndentCaseBlocks</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">IndentCaseLabels</span><span class="pi">:</span> <span class="no">false</span>
+<span class="na">IndentExternBlock</span><span class="pi">:</span> <span class="s">AfterExternBlock</span>
+<span class="na">IndentGotoLabels</span><span class="pi">:</span> <span class="no">false</span>
+<span class="na">IndentPPDirectives</span><span class="pi">:</span> <span class="s">BeforeHash</span>
+<span class="na">IndentRequiresClause</span><span class="pi">:</span> <span class="no">false</span>
+<span class="na">IndentWrappedFunctionNames</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">InsertBraces</span><span class="pi">:</span> <span class="no">false</span>
+<span class="na">InsertTrailingCommas</span><span class="pi">:</span> <span class="s">None</span>
+<span class="na">KeepEmptyLinesAtTheStartOfBlocks</span><span class="pi">:</span> <span class="no">false</span>
+<span class="na">LambdaBodyIndentation</span><span class="pi">:</span> <span class="s">OuterScope</span>
+<span class="na">MaxEmptyLinesToKeep</span><span class="pi">:</span> <span class="m">1</span>
+<span class="na">NamespaceIndentation</span><span class="pi">:</span> <span class="s">All</span>
+<span class="na">PackConstructorInitializers</span><span class="pi">:</span> <span class="s">CurrentLine</span>
+<span class="na">PointerAlignment</span><span class="pi">:</span> <span class="s">Right</span>
+<span class="na">ReferenceAlignment</span><span class="pi">:</span> <span class="s">Right</span>
+<span class="na">ReflowComments</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">RequiresClausePosition</span><span class="pi">:</span> <span class="s">OwnLine</span>
+<span class="na">SeparateDefinitionBlocks</span><span class="pi">:</span> <span class="s">Always</span>
+<span class="na">ShortNamespaceLines</span><span class="pi">:</span> <span class="m">0</span>
+<span class="na">SortIncludes</span><span class="pi">:</span> <span class="s">CaseSensitive</span>
+<span class="na">SortUsingDeclarations</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">SpaceAfterCStyleCast</span><span class="pi">:</span> <span class="no">false</span>
+<span class="na">SpaceAfterLogicalNot</span><span class="pi">:</span> <span class="no">false</span>
+<span class="na">SpaceAfterTemplateKeyword</span><span class="pi">:</span> <span class="no">false</span>
+<span class="na">SpaceAroundPointerQualifiers</span><span class="pi">:</span> <span class="s">Default</span>
+<span class="na">SpaceBeforeAssignmentOperators</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">SpaceBeforeCaseColon</span><span class="pi">:</span> <span class="no">false</span>
+<span class="na">SpaceBeforeCpp11BracedList</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">SpaceBeforeCtorInitializerColon</span><span class="pi">:</span> <span class="no">false</span>
+<span class="na">SpaceBeforeInheritanceColon</span><span class="pi">:</span> <span class="no">false</span>
+<span class="na">SpaceBeforeParens</span><span class="pi">:</span> <span class="s">ControlStatements</span>
+<span class="na">SpaceBeforeRangeBasedForLoopColon</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">SpaceBeforeSquareBrackets</span><span class="pi">:</span> <span class="no">false</span>
+<span class="na">SpaceInEmptyBlock</span><span class="pi">:</span> <span class="no">false</span>
+<span class="na">SpaceInEmptyParentheses</span><span class="pi">:</span> <span class="no">false</span>
+<span class="na">SpacesBeforeTrailingComments</span><span class="pi">:</span> <span class="m">2</span>
+<span class="na">SpacesInAngles</span><span class="pi">:</span> <span class="s">Never</span>
+<span class="na">SpacesInCStyleCastParentheses</span><span class="pi">:</span> <span class="no">false</span>
+<span class="na">SpacesInConditionalStatement</span><span class="pi">:</span> <span class="no">false</span>
+<span class="na">SpacesInContainerLiterals</span><span class="pi">:</span> <span class="no">false</span>
+<span class="na">SpacesInLineCommentPrefix</span><span class="pi">:</span>
+  <span class="na">Minimum</span><span class="pi">:</span> <span class="m">1</span>
+<span class="na">SpacesInParentheses</span><span class="pi">:</span> <span class="no">false</span>
+<span class="na">SpacesInSquareBrackets</span><span class="pi">:</span> <span class="no">false</span>
+<span class="na">Standard</span><span class="pi">:</span> <span class="s">Auto</span>
+
+<span class="c1"># Java</span>
+<span class="na">SortJavaStaticImport</span><span class="pi">:</span> <span class="s">Before</span>
+</pre></table></code></div></div><h1 id="示例">示例</h1><div class="language-cpp highlighter-rouge"><div class="code-header"> <span data-label-text="Cpp"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+</pre><td class="rouge-code"><pre><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;cstdlib&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;ctime&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;functional&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;iterator&gt;</span><span class="cp">
+</span>
+<span class="cp">#define BIT_MASK 0xDEADBEAF
+</span>
+<span class="cp">#define MULTILINE_DEF(a, b)         \
+    if ((a) &gt; 2) {                  \
+        auto temp = (b) / 2;        \
+        (b)       += 10;            \
+        someFunctionCall((a), (b)); \
+    }
+</span>
+<span class="k">namespace</span> <span class="n">LevelOneNamespace</span> <span class="p">{</span>
+    <span class="k">namespace</span> <span class="n">LevelTwoNamespace</span> <span class="p">{</span>
+
+        <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="p">,</span> <span class="kt">int</span> <span class="n">size</span><span class="p">&gt;</span> <span class="kt">bool</span> <span class="n">is_sorted</span><span class="p">(</span><span class="n">T</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">array</span><span class="p">)[</span><span class="n">size</span><span class="p">])</span>
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="n">std</span><span class="o">::</span><span class="n">adjacent_find</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">array</span> <span class="o">+</span> <span class="n">size</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">greater</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">())</span>
+                <span class="o">==</span> <span class="n">array</span> <span class="o">+</span> <span class="n">size</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">uint32_t</span><span class="o">&gt;</span> <span class="n">returnVector</span><span class="p">(</span>
+            <span class="kt">uint32_t</span> <span class="o">*</span><span class="n">LongNameForParameter1</span><span class="p">,</span> <span class="kt">double</span> <span class="o">*</span><span class="n">LongNameForParameter2</span><span class="p">,</span>
+            <span class="k">const</span> <span class="kt">float</span>                          <span class="o">&amp;</span><span class="n">LongNameForParameter3</span><span class="p">,</span>
+            <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="kt">int32_t</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">LongNameForParameter4</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="c1">// TODO: This is a long comment that allows you to understand how</span>
+            <span class="c1">// long comments will be trimmed. Here should be deep thought but</span>
+            <span class="c1">// it's just not right time for this</span>
+
+            <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="o">&amp;</span><span class="n">i</span> <span class="o">:</span> <span class="n">LongNameForParameter4</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">auto</span> <span class="n">b</span> <span class="o">=</span> <span class="n">someFunctionCall</span><span class="p">(</span>
+                    <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int16_t</span><span class="o">&gt;</span><span class="p">(</span><span class="o">*</span><span class="n">LongNameForParameter2</span><span class="p">),</span>
+                    <span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="kt">float</span> <span class="o">*&gt;</span><span class="p">(</span><span class="n">LongNameForParameter2</span><span class="p">));</span>
+                <span class="n">i</span><span class="p">.</span><span class="n">second</span><span class="o">++</span><span class="p">;</span>
+            <span class="p">}</span>
+
+            <span class="k">do</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">a</span><span class="p">)</span>
+                    <span class="n">a</span><span class="o">--</span><span class="p">;</span>
+                <span class="k">else</span>
+                    <span class="n">a</span><span class="o">++</span><span class="p">;</span>
+            <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+
+            <span class="k">return</span> <span class="p">{};</span>
+        <span class="p">}</span>
+
+    <span class="p">}</span>  <span class="c1">// namespace LevelTwoNamespace</span>
+<span class="p">}</span>  <span class="c1">// namespace LevelOneNamespace</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">srand</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">time</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
+
+    <span class="kt">int</span> <span class="n">list</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">};</span>
+
+    <span class="k">do</span> <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">random_shuffle</span><span class="p">(</span><span class="n">list</span><span class="p">,</span> <span class="n">list</span> <span class="o">+</span> <span class="mi">9</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="n">is_sorted</span><span class="p">(</span><span class="n">list</span><span class="p">));</span>
+
+    <span class="kt">int</span> <span class="n">score</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="k">do</span> <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Current list: "</span><span class="p">;</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">copy</span><span class="p">(</span><span class="n">list</span><span class="p">,</span> <span class="n">list</span> <span class="o">+</span> <span class="mi">9</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">ostream_iterator</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="p">,</span> <span class="s">" "</span><span class="p">));</span>
+
+        <span class="kt">int</span> <span class="n">rev</span><span class="p">;</span>
+        <span class="k">while</span> <span class="p">(</span><span class="nb">true</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"</span><span class="se">\n</span><span class="s">Digits to reverse? "</span><span class="p">;</span>
+            <span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">rev</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">rev</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">rev</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Please enter a value between 2 and 9."</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="o">++</span><span class="n">score</span><span class="p">;</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">reverse</span><span class="p">(</span><span class="n">list</span><span class="p">,</span> <span class="n">list</span> <span class="o">+</span> <span class="n">rev</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">is_sorted</span><span class="p">(</span><span class="n">list</span><span class="p">));</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Congratulations, you sorted the list.</span><span class="se">\n</span><span class="s">"</span>
+              <span class="o">&lt;&lt;</span> <span class="s">"You needed "</span> <span class="o">&lt;&lt;</span> <span class="n">score</span> <span class="o">&lt;&lt;</span> <span class="s">" reversals."</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+</pre></table></code></div></div></div><div class="post-tail-wrapper text-muted"><div class="post-meta mb-3"> <i class="far fa-folder-open fa-fw mr-1"></i> <a href='/categories/computer/'>Computer</a>, <a href='/categories/tools/'>Tools</a></div><div class="post-tags"> <i class="fa fa-tags fa-fw mr-1"></i> <a href="/tags/tips/" class="post-tag no-text-decoration" >tips</a> <a href="/tags/notes/" class="post-tag no-text-decoration" >notes</a></div><div class="post-tail-bottom d-flex justify-content-between align-items-center mt-3 pt-5 pb-2"><div class="license-wrapper"> 本文由作者按照 <a href="https://creativecommons.org/licenses/by/4.0/"> CC BY 4.0 </a> 进行授权</div><div class="share-wrapper"> <span class="share-label text-muted mr-1">分享</span> <span class="share-icons"> <a href="https://twitter.com/intent/tweet?text=%E4%B8%AA%E4%BA%BA+clang-format-15+%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6+-+Fr4nk1in&url=https%3A%2F%2Fblog.fr4nk1in.top%2Fposts%2Fclang_format%2F" data-toggle="tooltip" data-placement="top" title="Twitter" target="_blank" rel="noopener" aria-label="Twitter"> <i class="fa-fw fab fa-twitter"></i> </a> <a href="https://www.facebook.com/sharer/sharer.php?title=%E4%B8%AA%E4%BA%BA+clang-format-15+%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6+-+Fr4nk1in&u=https%3A%2F%2Fblog.fr4nk1in.top%2Fposts%2Fclang_format%2F" data-toggle="tooltip" data-placement="top" title="Facebook" target="_blank" rel="noopener" aria-label="Facebook"> <i class="fa-fw fab fa-facebook-square"></i> </a> <a href="https://t.me/share/url?url=https%3A%2F%2Fblog.fr4nk1in.top%2Fposts%2Fclang_format%2F&text=%E4%B8%AA%E4%BA%BA+clang-format-15+%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6+-+Fr4nk1in" data-toggle="tooltip" data-placement="top" title="Telegram" target="_blank" rel="noopener" aria-label="Telegram"> <i class="fa-fw fab fa-telegram"></i> </a> <i id="copy-link" class="fa-fw fas fa-link small" data-toggle="tooltip" data-placement="top" title="分享链接" data-title-succeed="链接已复制！"> </i> </span></div></div></div></div></div><div id="panel-wrapper" class="col-xl-3 pl-2 text-muted"><div class="access"><div id="access-lastmod" class="post"><div class="panel-heading">最近更新</div><ul class="post-content pl-0 pb-1 ml-1 mt-2"><li><a href="/posts/msys2/">MSYS2 安装与配置</a><li><a href="/posts/LaTeX/">WSL + LaTeX 配置</a><li><a href="/posts/tips/">工具汇总</a><li><a href="/posts/kitty/">个人 Kitty Terminal 配置文件</a><li><a href="/posts/pwsh7/">PowerShell + Windows Terminal 美化</a></ul></div><div id="access-tags"><div class="panel-heading">热门标签</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/tags/tips/">tips</a> <a class="post-tag" href="/tags/tools/">tools</a> <a class="post-tag" href="/tags/notes/">notes</a> <a class="post-tag" href="/tags/datapath/">datapath</a> <a class="post-tag" href="/tags/hardware/">hardware</a></div></div></div></div></div><div class="row"><div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 pl-3 pr-3 pr-xl-4"><div id="related-posts" class="mt-5 mb-2 mb-sm-4"><h3 class="pt-2 mt-1 mb-4 ml-1" data-toc-skip>相关文章</h3><div class="card-deck mb-4"><div class="card"> <a href="/posts/kitty/"><div class="card-body"> <em class="small" data-ts="1626962400" data-df="YYYY-MM-DD" > 2021-07-22 </em><h3 class="pt-0 mt-1 mb-3" data-toc-skip>个人 Kitty Terminal 配置文件</h3><div class="text-muted small"><p> 配置文件 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67...</p></div></div></a></div><div class="card"> <a href="/posts/exec/"><div class="card-body"> <em class="small" data-ts="1614879000" data-df="YYYY-MM-DD" > 2021-03-05 </em><h3 class="pt-0 mt-1 mb-3" data-toc-skip>关于 exec() 函数族的参数</h3><div class="text-muted small"><p> 问题 今天上 OS 课的时候, 老师讲了一个系统调用族 exec() 中的函数 execl(). 它的参数是 int execl(const char *path, const char *arg0, const char *arg1, ..., NULL); // path - executable file path // arg - argument to pass to the ...</p></div></div></a></div><div class="card"> <a href="/posts/wsl/"><div class="card-body"> <em class="small" data-ts="1614844800" data-df="YYYY-MM-DD" > 2021-03-04 </em><h3 class="pt-0 mt-1 mb-3" data-toc-skip>WSL2 + WSLg 安装与配置</h3><div class="text-muted small"><p> WSL 启用 WSL 在有管理员权限的 PowerShell 中输入 dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart dism.exe /online /enable-feature /featurename:VirtualMachinePlatfo...</p></div></div></a></div></div></div><div class="post-navigation d-flex justify-content-between"> <a href="/posts/exec/" class="btn btn-outline-primary" prompt="上一篇"><p>关于 exec() 函数族的参数</p></a> <a href="/posts/riscv_minimal/" class="btn btn-outline-primary" prompt="下一篇"><p>一个 RISC-V 32 位指令集子集的五级流水线 CPU 数据通路</p></a></div></div></div><footer class="row pl-3 pr-3"><div class="col-12 d-flex justify-content-between align-items-center text-muted pl-0 pr-0"><div class="footer-left"><p class="mb-0"> © 2023 <a href="https://twitter.com/Fr4nk1inCs">Fr4nk1in</a>. <span data-toggle="tooltip" data-placement="top" title="除非另有说明，本网站上的博客文章均由作者按照知识共享署名 4.0 国际 (CC BY 4.0) 许可协议进行授权。">保留部分权利。</span></p></div><div class="footer-right"><p class="mb-0"> 本站由 <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> 生成，采用 <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> 主题。</p></div></div></footer></div><div id="search-result-wrapper" class="d-flex justify-content-center unloaded"><div class="col-12 col-sm-11 post-content"><div id="search-hints"><div id="access-tags"><div class="panel-heading">热门标签</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/tags/tips/">tips</a> <a class="post-tag" href="/tags/tools/">tools</a> <a class="post-tag" href="/tags/notes/">notes</a> <a class="post-tag" href="/tags/datapath/">datapath</a> <a class="post-tag" href="/tags/hardware/">hardware</a></div></div></div><div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div></div></div></div><div id="mask"></div><a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button"> <i class="fas fa-angle-up"></i> </a><div id="notification" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-animation="true" data-autohide="false"><div class="toast-header"> <button type="button" class="ml-2 ml-auto close" data-dismiss="toast" aria-label="Close"> <span aria-hidden="true">&times;</span> </button></div><div class="toast-body text-center pt-0"><p class="pl-2 pr-2 mb-3">发现新版本的内容。</p><button type="button" class="btn btn-primary" aria-label="Update"> 更新 </button></div></div><script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script> <script> SimpleJekyllSearch({ searchInput: document.getElementById('search-input'), resultsContainer: document.getElementById('search-results'), json: '/assets/js/data/search.json', searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0"> <a href="{url}">{title}</a><div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1"> {categories} {tags}</div><p>{snippet}</p></div>', noResultsText: '<p class="mt-5">搜索结果为空</p>', templateMiddleware: function(prop, value, template) { if (prop === 'categories') { if (value === '') { return `${value}`; } else { return `<div class="mr-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`; } } if (prop === 'tags') { if (value === '') { return `${value}`; } else { return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`; } } } }); </script> <script src="https://cdn.jsdelivr.net/combine/npm/magnific-popup@1/dist/jquery.magnific-popup.min.js,npm/lozad/dist/lozad.min.js,npm/clipboard@2/dist/clipboard.min.js"></script> <script src="https://cdn.jsdelivr.net/combine/npm/dayjs@1/dayjs.min.js,npm/dayjs@1/locale/zh-cn.min.js,npm/dayjs@1/plugin/relativeTime.min.js,npm/dayjs@1/plugin/localizedFormat.min.js"></script> <script defer src="/assets/js/dist/post.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.bundle.min.js"></script> <script defer src="/app.js"></script> <script defer src="https://www.googletagmanager.com/gtag/js?id=G-DE9BVMP4F5"></script> <script> document.addEventListener("DOMContentLoaded", function(event) { window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-DE9BVMP4F5'); }); </script>
