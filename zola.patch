@@ -1,0 +1,44 @@
+diff --git a/Cargo.lock b/Cargo.lock
+index a1ef906e..8c8ae968 100644
+--- a/Cargo.lock
++++ b/Cargo.lock
+@@ -2813,7 +2813,7 @@ dependencies = [
+  "once_cell",
+  "percent-encoding",
+  "pulldown-cmark",
+- "pulldown-cmark-escape 0.11.0 (registry+https://github.com/rust-lang/crates.io-index)",
++ "pulldown-cmark-escape",
+  "quickxml_to_serde",
+  "rayon",
+  "regex",
+@@ -4139,16 +4139,10 @@ source = "git+https://github.com/cestef/pulldown-cmark?branch=admonition-handler
+ dependencies = [
+  "bitflags 2.8.0",
+  "memchr",
+- "pulldown-cmark-escape 0.11.0 (git+https://github.com/cestef/pulldown-cmark?branch=admonition-handler-fix)",
++ "pulldown-cmark-escape",
+  "unicase",
+ ]
+ 
+-[[package]]
+-name = "pulldown-cmark-escape"
+-version = "0.11.0"
+-source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "007d8adb5ddab6f8e3f491ac63566a7d5002cc7ed73901f72057943fa71ae1ae"
+-
+ [[package]]
+ name = "pulldown-cmark-escape"
+ version = "0.11.0"
+diff --git a/components/libs/Cargo.toml b/components/libs/Cargo.toml
+index 03336261..b064eebb 100644
+--- a/components/libs/Cargo.toml
++++ b/components/libs/Cargo.toml
+@@ -45,7 +45,7 @@ pulldown-cmark = { git = "https://github.com/cestef/pulldown-cmark", branch = "a
+     "html",
+     "simd",
+ ] }
+-pulldown-cmark-escape = { version = "0.11", default-features = false }
++pulldown-cmark-escape = { git = "https://github.com/cestef/pulldown-cmark", branch = "admonition-handler-fix", default-features = false }
+ quickxml_to_serde = "0.6"
+ rayon = "1"
+ regex = "1"
