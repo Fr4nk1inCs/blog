@@ -3,12 +3,12 @@
 {% block article %}
 
 <a href="/" class="underline-offset-4 decoration-4">
-    <h1>blog.cstef.dev</h1>
+    <h1>fr4nk1in.top</h1>
 </a>
 
 <p>
-    Sometimes, I like to share my thoughts, notes, ideas or projects on this blog. Maybe you'll find something useful
-    here!
+    Hi, here's Fr4nk1in. I'm a graduate student from <a href="https://www.ustc.edu">USTC</a>, currently working in the field of Artificial
+    Intelligence Systems. I'd like to share my thoughts, notes and ideas here.
 </p>
 
 <h2>Latest posts</h2>
@@ -17,50 +17,41 @@
 
 <ul>
     {% for page in section.pages | slice(end=5) %}
-        <li>
-            <div>
-                <h3 class="flex items-center gap-2 md:gap-4">
-                    <a
-                        href="{{ page.permalink | safe }}"
-                        class="underline-offset-2 decoration-2 max-w-[70%] w-fit"
-                    >
-                        {{ page.title }}
-                    </a>
-                    <div class="flex-grow"></div>
-                    <div class="flex-col flex items-center justify-center gap-y-2 gap-x-4">
-                        <span class="text-sm text-muted-foreground">
-                            {{ page.date | date(format="%Y-%m-%d") }}
-                        </span>
-                        <div class="flex flex-col gap-2 items-center">
-                            {% for tax in page.taxonomies.tags %}
-                            <a
-                                href="/{{ tax }}"
-                                class="bg-accent text-accent-foreground px-2 py-1 rounded-md text-sm w-fit font-bold no-underline"
-                            >
-                                {{ tax }}
-                            </a>
-                            {% endfor %}
-                        </div>
+    <li>
+        <div>
+            <h3 class="flex items-center gap-2 md:gap-4">
+                <a href="{{ page.permalink | safe }}" class="underline-offset-2 decoration-2 max-w-[70%] w-fit">
+                    {{ page.title }}
+                </a>
+                <div class="flex-grow"></div>
+                <div class="flex-col flex items-center justify-center gap-y-2 gap-x-4">
+                    <span class="text-sm text-muted-foreground">
+                        {{ page.date | date(format="%Y-%m-%d") }}
+                    </span>
+                    <div class="flex flex-col gap-2 items-center">
+                        {% for tax in page.taxonomies.tags %}
+                        <a href="/{{ tax }}"
+                            class="bg-accent text-accent-foreground px-2 py-1 rounded-md text-sm w-fit font-bold no-underline">
+                            {{ tax }}
+                        </a>
+                        {% endfor %}
                     </div>
-                </h3>
+                </div>
+            </h3>
 
-                <p>{{ page.description }}</p>
-            </div>
-        </li>
+            <p>{{ page.description }}</p>
+        </div>
+    </li>
     {% endfor %}
 </ul>
 
 
 <div class="flex gap-4 sm:gap-6 items-center justify-center mt-8 md:mt-12">
     <a href="/atom.xml" class="no-underline">
-        <div
-            class="bg-accent px-3 py-1 md:py-2 h-fit hover:bg-primary/90 transition-colors duration-200 group"
-        >
+        <div class="bg-accent px-3 py-1 md:py-2 h-fit hover:bg-primary/90 transition-colors duration-200 group">
             <div class="flex gap-2 sm:gap-3 items-center justify-center">
-                <p
-                    class="text-muted-foreground group-hover:text-primary-foreground transition-colors duration-200 p-0 !m-0 text-sm sm:text-base"
-                    style="margin: 0 !important;"
-                >
+                <p class="text-muted-foreground group-hover:text-primary-foreground transition-colors duration-200 p-0 !m-0 text-sm sm:text-base"
+                    style="margin: 0 !important;">
                     Subscribe to the feed
                 </p>
                 <svg class="duration-200 transition-colors group-hover:text-primary-foreground h-[1.2rem] w-[1.2rem] text-[--tw-prose-links]"
@@ -76,14 +67,10 @@
         </div>
     </a>
     <a href="/archive" class="no-underline">
-        <div
-            class="bg-accent px-3 py-1 md:py-2 h-fit hover:bg-primary/90 transition-colors duration-200 group"
-        >
+        <div class="bg-accent px-3 py-1 md:py-2 h-fit hover:bg-primary/90 transition-colors duration-200 group">
             <div class="flex gap-2 sm:gap-3 items-center justify-center">
-                <p
-                    class="text-muted-foreground group-hover:text-primary-foreground transition-colors duration-200 p-0 !m-0 text-sm sm:text-base"
-                    style="margin: 0 !important;"
-                >
+                <p class="text-muted-foreground group-hover:text-primary-foreground transition-colors duration-200 p-0 !m-0 text-sm sm:text-base"
+                    style="margin: 0 !important;">
                     View all posts
                 </p>
                 <svg class="duration-200 transition-colors group-hover:text-primary-foreground h-[1.2rem] w-[1.2rem] text-[--link]"
@@ -100,17 +87,23 @@
     </a>
 </div>
 
-<h2>Corrections</h2>
+<h2>Correction</h2>
 
 <p>
-    I am far from perfect, and I am sure that there are mistakes in most of the content on this site. If you find any
-    errors, please let me know so that I can correct them. I appreciate your help in making this site better for
-    everyone.
+    Everyone makes mistakes, and I am no exception. If you find any errors, please let me know so that I can correct
+    them.
 </p>
+
 <p>
-    You can reach me <em>via</em> mail at <a href="mailto:hi@cstef.dev">hi@cstef.dev</a>, or you can open an issue on
-    the
-    <a href="https://github.com/cestef/blog.cstef.dev">GitHub repository</a>.
+    You can reach me <em>via</em> email at <a href="mailto:sh.fu@outlook.com">sh.fu [at] outlook [dot] com</a> or open an issue on
+    <a href="https://github.com/Fr4nk1inCs/blog">GitHub</a>.
+</p>
+
+<h2>Credits</h2>
+
+<p>
+    This site uses <a href="https://github.com/cestef/blog.cstef.dev">cstef's blog</a> as a template, huge shout-out to
+    they!
 </p>
 
 <footer class="py-2 text-center">
@@ -119,12 +112,19 @@
         {{ now() | date(format="%Y") }}
         <a href="https://cstef.dev" class="underline-offset-2 decoration-2"> cstef</a>
     </p>
+    <p class="text-xs">
+        Contact me via
+        <a href="mailto:sh.fu@outlook.com" class="underline-offset-2 decoration-2">Email</a>
+        -
+        <a href="https://github.com/Fr4nk1inCs" class="underline-offset-2 decoration-2">GitHub</a>
+        -
+        <a href="https://x.com/Fr4nk1inCs" class="underline-offset-2 decoration-2">X/Twitter</a>
+    </p>
     <p class="text-xs"><a href="https://getzola.org">Zola</a> v{{ version }} -
-        <a href="https://github.com/cestef/blog.cstef.dev" class="underline-offset-2 decoration-2">
+        <a href="https://github.com/Fr4nk1inCs/blog" class="underline-offset-2 decoration-2">
             source
         </a>
     </p>
 </footer>
 
 {% endblock article %}
-

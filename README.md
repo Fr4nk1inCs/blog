@@ -1,12 +1,12 @@
 <p align="center">
-    <img src="./assets/dark-gruvbox.png#gh-dark-mode-only" alt="blog.cstef.dev" width="100%">
-    <img src="./assets/light-gruvbox.png#gh-light-mode-only" alt="blog.cstef.dev" width="100%">
+    <img src="./assets/dark-nord.png#gh-dark-mode-only" alt="fr4nk1in.top" width="100%">
+    <img src="./assets/light-nord.png#gh-light-mode-only" alt="fr4nk1in.top" width="100%">
 </p>
 
 A collection of notes, thoughts, and ideas, or whatever I feel like writing about. 
 
 <p align="center">
-    <b><a href="https://blog.cstef.dev">Visit the blog</a></b>
+    <b><a href="https://fr4nk1in.top">Visit the blog</a></b>
 </p>
 
 ## Making this blog yours
@@ -18,8 +18,8 @@ This blog is built using a fork of [zola](https://www.getzola.org/), a static si
 1. Clone the repository
 
 ```bash
-git clone https://github.com/cestef/blog.cstef.dev.git
-cd blog.cstef.dev
+git clone https://github.com/Fr4nk1inCs/blog.git
+cd blog
 ```
 
 2. Install `zola`

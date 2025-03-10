@@ -1,5 +1,5 @@
 # The URL the site will be built for
-base_url = "https://blog.cstef.dev"
+base_url = "https://fr4nk1in.top"
 minify_html = true
 generate_feeds = true
 feed_filenames = ["atom.xml", "rss.xml"]
