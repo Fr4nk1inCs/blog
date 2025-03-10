@@ -1,0 +1,261 @@
+:root {
+	/* Callouts */
+  --color-red-rgb: 191, 97, 106;
+	--color-red: #bf616a;
+  --color-orange-rgb: 201, 130, 107;
+	--color-orange: #c9826b;
+  --color-yellow-rgb: 235, 204, 139;
+	--color-yellow: #ebcb8b;
+  --color-green-rgb: 163, 190, 140;
+	--color-green: #a3be8c;
+  --color-cyan-rgb: 136, 192, 208;
+	--color-cyan: #88c0d0;
+  --color-blue-rgb: 129, 161, 193;
+	--color-blue: #81a1c1;
+  --color-purple-rgb: 180, 142, 173;
+	--color-purple: #b48ead;
+  --color-pink-rgb: 191, 136, 188;
+	--color-pink: #bf88bc;
+
+	/* Base colors */
+	--background: 220 16% 96%;
+	--foreground: 220 16% 22%;
+
+	/* Surface variations */
+	--card: 220 16% 96%;
+	--card-foreground: 220 16% 22%;
+	--popover: 220 16% 96%;
+	--popover-foreground: 220 16% 22%;
+	--modal: 220 16% 96%;
+	--modal-foreground: 220 16% 22%;
+
+	/* Interactive elements */
+	--primary: 220 16% 22%;
+	--primary-foreground: 220 16% 96%;
+	--primary-hover: 220 16% 27%;
+	--secondary: 220 16% 92%;
+	--secondary-foreground: 220 16% 22%;
+	--secondary-hover: 220 16% 88%;
+
+	/* States and accents */
+	--muted: 220 16% 92%;
+	--muted-foreground: 220 16% 45%;
+	--accent: 220 16% 92%;
+	--accent-foreground: 220 16% 22%;
+	--accent-hover: 220 16% 88%;
+
+	/* Status colors */
+	--destructive: 354 42% 56%;
+	--destructive-foreground: 220 16% 96%;
+	--destructive-hover: 354 42% 51%;
+	--success: 144 45.7% 46.1%;
+	--success-foreground: 210 12% 94.1%;
+	--success-hover: 144 45.7% 41.1%;
+	--warning: 43 96% 56%;
+	--warning-foreground: 210 12% 94.1%;
+	--info: 210 34% 63%;
+	--info-foreground: 210 12% 94.1%;
+
+	/* UI elements */
+	--border: 220 16% 88%;
+	--border-hover: 220 16% 83%;
+	--input: 220 16% 88%;
+	--input-focus: 220 16% 83%;
+	--ring: 220 16% 22%;
+	--radius: 0.5rem;
+
+	/* Chart colors */
+	--chart-1: 193 76% 56%;
+	--chart-2: 210 34% 63%;
+	--chart-3: 213 32% 52%;
+	--chart-4: 179 25% 65%;
+	--chart-5: 311 20% 63%;
+
+	/* Code syntax highlighting */
+	--shiki-foreground: #4c566a;
+	--shiki-background: transparent;
+	--shiki-token-constant: #5e81ac;
+	--shiki-token-string: #a3be8c;
+	--shiki-token-comment: #616e88;
+	--shiki-token-keyword: #81a1c1;
+	--shiki-token-parameter: #4c566a;
+	--shiki-token-function: #88c0d0;
+	--shiki-token-string-expression: #a3be8c;
+	--shiki-token-punctuation: #4c566a;
+	--shiki-token-link: #a3be8c;
+
+	/* ANSI colors */
+	--ansi-black: #3b4252;
+	--ansi-black-dim: #3b425280;
+	--ansi-red: #bf616a;
+	--ansi-red-dim: #bf616a80;
+	--ansi-green: #a3be8c;
+	--ansi-green-dim: #a3be8c80;
+	--ansi-yellow: #ebcb8b;
+	--ansi-yellow-dim: #ebcb8b80;
+	--ansi-blue: #81a1c1;
+	--ansi-blue-dim: #81a1c180;
+	--ansi-magenta: #b48ead;
+	--ansi-magenta-dim: #b48ead80;
+	--ansi-cyan: #88c0d0;
+	--ansi-cyan-dim: #88c0d080;
+	--ansi-white: #e5e9f0;
+	--ansi-white-dim: #e5e9f080;
+	--ansi-bright-black: #4c566a;
+	--ansi-bright-black-dim: #4c566a80;
+	--ansi-bright-red: #bf616a;
+	--ansi-bright-red-dim: #bf616a80;
+	--ansi-bright-green: #a3be8c;
+	--ansi-bright-green-dim: #a3be8c80;
+	--ansi-bright-yellow: #ebcb8b;
+	--ansi-bright-yellow-dim: #ebcb8b80;
+	--ansi-bright-blue: #81a1c1;
+	--ansi-bright-blue-dim: #81a1c180;
+	--ansi-bright-magenta: #b48ead;
+	--ansi-bright-magenta-dim: #b48ead80;
+	--ansi-bright-cyan: #8fbcbb;
+	--ansi-bright-cyan-dim: #8fbcbb80;
+	--ansi-bright-white: #eceff4;
+	--ansi-bright-white-dim: #eceff480;
+  
+  .prose {
+      --tw-prose-body: #4c566a;
+			--tw-prose-headings: #2e3440;
+			--tw-prose-lead: #434c5e;
+			--tw-prose-links: #5e81ac;
+			--tw-prose-bold: #2e3440;
+			--tw-prose-counters: #4c566a;
+			--tw-prose-bullets: #d8dee9;
+			--tw-prose-hr: #e5e9f0;
+			--tw-prose-quotes: #2e3440;
+			--tw-prose-quote-borders: #e5e9f0;
+			--tw-prose-captions: #4c566a;
+			--tw-prose-kbd: #2e3440;
+			--tw-prose-kbd-shadows: 35 52 64;
+			--tw-prose-code: #bf616a;
+			--tw-prose-pre-code: #eceff4;
+			--tw-prose-pre-bg: #3b4252;
+			--tw-prose-th-borders: #d8dee9;
+			--tw-prose-td-borders: #e5e9f0;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		/* Base colors - darker background */
+		--background: 220 16% 22%;
+		--foreground: 220 16% 96%;
+
+		/* Surface variations */
+		--card: 220 16% 22%;
+		--card-foreground: 220 16% 96%;
+		--popover: 220 16% 22%;
+		--popover-foreground: 220 16% 96%;
+
+		/* Interactive elements */
+		--primary: 220 16% 96%;
+		--primary-foreground: 220 16% 22%;
+		--secondary: 220 17% 26%;
+		--secondary-foreground: 220 16% 96%;
+
+		/* States and accents */
+		--muted: 220 17% 26%;
+		--muted-foreground: 220 16% 80%;
+		--accent: 220 17% 26%;
+		--accent-foreground: 220 16% 96%;
+
+		/* Status colors */
+		--destructive: 354 42% 56%;
+		--destructive-foreground: 220 16% 96%;
+		--destructive-hover: 354 42% 51%;
+		--success: 144 45.7% 46.1%;
+		--success-foreground: 210 12% 94.1%;
+		--success-hover: 144 45.7% 41.1%;
+		--warning: 43 96% 56%;
+		--warning-foreground: 210 12% 94.1%;
+		--info: 210 34% 63%;
+		--info-foreground: 210 12% 94.1%;
+
+		/* UI elements */
+		--border: 220 17% 26%;
+		--border-hover: 220 17% 29%;
+		--input: 220 17% 26%;
+		--input-focus: 220 17% 29%;
+		--ring: 220 16% 88%;
+		--radius: 0.5rem;
+
+		/* Chart colors */
+		--chart-1: 193 76% 56%;
+		--chart-2: 210 34% 63%;
+		--chart-3: 213 32% 52%;
+		--chart-4: 179 25% 65%;
+		--chart-5: 311 20% 63%;
+
+		--shiki-foreground: #d8dee9;
+		--shiki-background: transparent;
+		--shiki-token-constant: #8fbcbb;
+		--shiki-token-string: #a3be8c;
+		--shiki-token-comment: #4c566a;
+		--shiki-token-keyword: #81a1c1;
+		--shiki-token-parameter: #d8dee9;
+		--shiki-token-function: #88c0d0;
+		--shiki-token-string-expression: #a3be8c;
+		--shiki-token-punctuation: #d8dee9;
+		--shiki-token-link: #a3be8c;
+
+		/* ANSI colors */
+		--shiki-ansi-black: #3b4252;
+		--shiki-ansi-black-dim: #3b425280;
+		--shiki-ansi-red: #bf616a;
+		--shiki-ansi-red-dim: #bf616a80;
+		--shiki-ansi-green: #a3be8c;
+		--shiki-ansi-green-dim: #a3be8c80;
+		--shiki-ansi-yellow: #ebcb8b;
+		--shiki-ansi-yellow-dim: #ebcb8b80;
+		--shiki-ansi-blue: #81a1c1;
+		--shiki-ansi-blue-dim: #81a1c180;
+		--shiki-ansi-magenta: #b48ead;
+		--shiki-ansi-magenta-dim: #b48ead80;
+		--shiki-ansi-cyan: #88c0d0;
+		--shiki-ansi-cyan-dim: #88c0d080;
+		--shiki-ansi-white: #e5e9f0;
+		--shiki-ansi-white-dim: #e5e9f080;
+		--shiki-ansi-bright-black: #4c566a;
+		--shiki-ansi-bright-black-dim: #4c566a80;
+		--shiki-ansi-bright-red: #bf616a;
+		--shiki-ansi-bright-red-dim: #bf616a80;
+		--shiki-ansi-bright-green: #a3be8c;
+		--shiki-ansi-bright-green-dim: #a3be8c80;
+		--shiki-ansi-bright-yellow: #ebcb8b;
+		--shiki-ansi-bright-yellow-dim: #ebcb8b80;
+		--shiki-ansi-bright-blue: #81a1c1;
+		--shiki-ansi-bright-blue-dim: #81a1c180;
+		--shiki-ansi-bright-magenta: #b48ead;
+		--shiki-ansi-bright-magenta-dim: #b48ead80;
+		--shiki-ansi-bright-cyan: #8fbcbb;
+		--shiki-ansi-bright-cyan-dim: #8fbcbb80;
+		--shiki-ansi-bright-white: #eceff4;
+		--shiki-ansi-bright-white-dim: #eceff480;
+    
+    .prose {
+			--tw-prose-body: #d8dee9;
+			--tw-prose-headings: #eceff4;
+			--tw-prose-lead: #e5e9f0;
+			--tw-prose-links: #88c0d0;
+			--tw-prose-bold: #eceff4;
+			--tw-prose-counters: #d8dee9;
+			--tw-prose-bullets: #4c566a;
+			--tw-prose-hr: #3b4252;
+			--tw-prose-quotes: #eceff4;
+			--tw-prose-quote-borders: #3b4252;
+			--tw-prose-captions: #d8dee9;
+			--tw-prose-kbd: #eceff4;
+			--tw-prose-kbd-shadows: 236 239 244;
+			--tw-prose-code: #bf616a;
+			--tw-prose-pre-code: #d8dee9;
+			--tw-prose-pre-bg: rgb(46 52 64 / 50%);
+			--tw-prose-th-borders: #4c566a;
+			--tw-prose-td-borders: #3b4252;
+    }
+	}
+}

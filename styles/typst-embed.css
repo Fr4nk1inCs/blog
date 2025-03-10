@@ -1,20 +1,22 @@
 :root {
-	--t: #3c3836;
-	--d: #efefeb;
-	--m: #dfddd8;
-	--b: #458588;
-	--r: #cc241d;
-	--g: #98971a;
-	--p: #b16286;
-	--y: #fabd2f;
+	--t: #2f3541;
+	--d: #d8dee9;
+	--m: #4c566a;
+	--b: #81a1c1;
+	--r: #bf616a;
+	--g: #a3be8c;
+	--p: #b48ead;
+	--y: #ebcb8b;
 }
+
 @media (prefers-color-scheme: dark) {
 	:root {
-		--t: #ebdbb2;
-		--d: #292724;
-		--m: #3b3935;
+		--t: #d8dee9;
+		--d: #2f3541;
+		--m: #4c566a;
 	}
 }
+
 .typst-text[fill="\#000000"],
 .typst-shape[fill="\#000000"],
 .typst-group[fill="\#000000"],

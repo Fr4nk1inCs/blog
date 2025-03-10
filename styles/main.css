@@ -1,13 +1,23 @@
 @import "tailwindcss";
 @import "./typst.css";
-@import "./gruvbox.css";
+@import "./nord.css";
 @import "./callouts.css";
-@import "./syntax-theme-dark.css" (prefers-color-scheme: dark);
-@import "./syntax-theme-light.css" (prefers-color-scheme: light);
+@import "./syntax-theme.css";
 
 @plugin "@tailwindcss/typography";
 
+@font-face {
+	font-family: "Maple Mono NF CN";
+	src: local("Maple Mono NF CN");
+	font-display: swap;
+	font-feature-settings: "zero" off, "cv01" on, "cv02" off, "cv03" on, "cv04"
+		off, "cv98" off, "cv99" off, "ss01" off;
+}
+
 @theme {
+	--font-mono: "Maple Mono NF CN", ui-monospace, SFMono-Regular, Menlo, Monaco,
+		Consolas, "Liberation Mono", "Courier New", monospace;
+
 	--color-border: hsl(var(--border));
 	--color-input: hsl(var(--input));
 	--color-ring: hsl(var(--ring));
@@ -90,9 +100,42 @@ pre[data-copy] {
 	@apply relative;
 }
 
+pre[data-name] {
+		@apply relative, pt-2;
+    
+    &::before {
+        content: attr(data-name);
+        @apply absolute -top-[1px] -left-[1px] bg-accent text-accent-foreground px-2 py-1 rounded-tl text-sm font-mono;
+    }
+}
+
+
+
 pre,
 code {
-	line-height: 1;
+	line-height: 1.2;
+}
+
+pre {
+	table {
+		@apply m-0 w-full border-collapse;
+
+		tr {
+			@apply w-full border-none;
+		}
+
+		td {
+			@apply p-0;
+		}
+
+		td:nth-of-type(1) {
+			@apply select-none;
+		}
+	}
+
+	mark {
+		@apply text-current block bg-secondary;
+	}
 }
 
 img.emoji {

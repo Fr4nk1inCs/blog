@@ -19,11 +19,6 @@ bottom_footnotes = true
 highlight_theme = "css"
 highlight_code = true
 
-# highlight_themes_css = [
-#     { theme = "gruvbox-dark", filename = "../styles/syntax-theme-dark.css" },
-#     { theme = "gruvbox-light", filename = "../styles/syntax-theme-light.css" },
-# ]
-
 [markdown.math]
 engine = "typst"
 svgo = "svgo.config.mjs"
