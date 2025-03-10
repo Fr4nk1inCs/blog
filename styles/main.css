@@ -101,7 +101,7 @@ pre[data-copy] {
 }
 
 pre[data-name] {
-		@apply relative, pt-2;
+		@apply relative pt-2;
     
     &::before {
         content: attr(data-name);
