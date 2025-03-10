@@ -48,30 +48,19 @@ jobs:
 
             - name: Display structure of built files
               run: ls -R public
-
+        
             - name: Upload artifact
-              uses: actions/upload-artifact@v4
+              uses: actions/upload-pages-artifact@v3
               with:
-                  name: site
                   path: public
 
     deploy:
+        environment:
+            name: github-pages
+            url: ${{ steps.deployment.outputs.page_url }}
         runs-on: ubuntu-latest
         needs: build
-
         steps:
-            - name: Download artifact
-              uses: actions/download-artifact@v4
-              with:
-                  name: site
-                  path: public
-            - name: Display structure of downloaded files
-              run: ls -R public
-
-            - name: Deploy
-              uses: cloudflare/wrangler-action@v3
-              with:
-                  apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-                  accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-                  command: pages deploy public --project-name=blog-cstef-dev
-                  gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+            - name: Deploy to GitHub Pages
+              id: deployment
+              uses: actions/deploy-pages@v4
