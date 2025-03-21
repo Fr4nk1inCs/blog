@@ -17,24 +17,30 @@
 
 <ul>
     {% for page in section.pages | slice(end=5) %}
-    <li>
-        <div>
-            <h3 class="flex items-center gap-2 md:gap-4">
-                <a href="{{ page.permalink | safe }}" class="underline-offset-2 decoration-2 max-w-[70%] w-fit">
-                    {{ page.title }}
-                </a>
-                <div class="flex-grow"></div>
-                <div class="flex-col flex items-center justify-center gap-y-2 gap-x-4">
-                    <span class="text-sm text-muted-foreground">
-                        {{ page.date | date(format="%Y-%m-%d") }}
-                    </span>
-                    <div class="flex flex-col gap-2 items-center">
-                        {% for tax in page.taxonomies.tags %}
-                        <a href="/{{ tax }}"
-                            class="bg-accent text-accent-foreground px-2 py-1 rounded-md text-sm w-fit font-bold no-underline">
-                            {{ tax }}
-                        </a>
-                        {% endfor %}
+        <li>
+            <div>
+                <h3 class="flex items-center gap-2 md:gap-4">
+                    <a
+                        href="{{ page.permalink | safe }}"
+                        class="underline-offset-2 decoration-2 max-w-[70%] w-fit"
+                    >
+                        {{ page.title }}
+                    </a>
+                    <div class="flex-grow"></div>
+                    <div class="flex-col flex items-center justify-center gap-y-2 gap-x-4">
+                        <span class="text-sm text-muted-foreground">
+                            {{ page.date | date(format="%Y-%m-%d") }}
+                        </span>
+                        <div class="flex flex-col gap-2 items-center">
+                            {% for tax in page.taxonomies.tags %}
+                            <a
+                                href="/tags/{{ tax }}"
+                                class="bg-accent text-accent-foreground px-2 py-1 rounded-md text-sm w-fit font-bold no-underline"
+                            >
+                                {{ tax }}
+                            </a>
+                            {% endfor %}
+                        </div>
                     </div>
                 </div>
             </h3>
