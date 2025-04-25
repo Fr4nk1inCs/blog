@@ -62,7 +62,11 @@ main {
 }
 
 .prose {
-	@apply xl:max-w-[72ch];
+	@apply xl:max-w-[96ch] max-w-[80ch];
+}
+
+blockquote {
+	@apply font-normal;
 }
 
 details {
@@ -94,7 +98,7 @@ article img:not(.typst-doc) {
 }
 
 .copy-button {
-	@apply absolute top-0 right-0 px-4 py-2 text-sm cursor-pointer;
+	@apply absolute top-0 right-0 px-4 py-2 cursor-pointer;
 }
 
 pre[data-copy] {
@@ -106,7 +110,7 @@ pre[data-name] {
 
 	&::before {
 		content: attr(data-name);
-		@apply absolute -top-[1px] -left-[1px] bg-[#3e4a5b] px-2 py-1 rounded-tl text-sm font-mono;
+		@apply absolute -top-[1px] -left-[1px] bg-[#3e4a5b] px-2 py-1 rounded-tl font-mono;
 	}
 }
 
