@@ -12,7 +12,8 @@ window.addEventListener("DOMContentLoaded", () => {
 	let enabled = false;
 	scrollElement.addEventListener("scroll", (e) => {
 		const percent =
-			(e.target.scrollTop / (e.target.scrollHeight - e.target.clientHeight)) * 100;
+			(e.target.scrollTop / (e.target.scrollHeight - e.target.clientHeight)) *
+			100;
 		fillElement.style.width = `${percent}%`;
 		if (e.target.scrollTop > 300) {
 			scrollButton.style.opacity = 1;
@@ -51,12 +52,14 @@ window.addEventListener("DOMContentLoaded", () => {
 		preElement.appendChild(copyButton);
 	}
 	console.log(
-		`Copy buttons injection took ${(performance.now() - codeBlockStart).toFixed(2)} ms`
+		`Copy buttons injection took ${(performance.now() - codeBlockStart).toFixed(2)} ms`,
 	);
 
 	const twemojiStart = performance.now();
 	twemoji.parse(document.body);
-	console.log(`twemoji.parse() took ${(performance.now() - twemojiStart).toFixed(2)} ms`);
+	console.log(
+		`twemoji.parse() took ${(performance.now() - twemojiStart).toFixed(2)} ms`,
+	);
 
 	const input = document.getElementById("goto-input");
 	const results = document.getElementById("goto-results");
@@ -74,7 +77,10 @@ window.addEventListener("DOMContentLoaded", () => {
 
 		if (index >= 0 && index < resultElements.length) {
 			resultElements[index].classList.add("selected");
-			resultElements[index].scrollIntoView({ block: "nearest", behavior: "smooth" });
+			resultElements[index].scrollIntoView({
+				block: "nearest",
+				behavior: "smooth",
+			});
 		}
 	}
 

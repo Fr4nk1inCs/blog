@@ -1,20 +1,20 @@
 :root {
 	/* Callouts */
-  --color-red-rgb: 191, 97, 106;
+	--color-red-rgb: 191, 97, 106;
 	--color-red: #bf616a;
-  --color-orange-rgb: 201, 130, 107;
+	--color-orange-rgb: 201, 130, 107;
 	--color-orange: #c9826b;
-  --color-yellow-rgb: 235, 204, 139;
+	--color-yellow-rgb: 235, 204, 139;
 	--color-yellow: #ebcb8b;
-  --color-green-rgb: 163, 190, 140;
+	--color-green-rgb: 163, 190, 140;
 	--color-green: #a3be8c;
-  --color-cyan-rgb: 136, 192, 208;
+	--color-cyan-rgb: 136, 192, 208;
 	--color-cyan: #88c0d0;
-  --color-blue-rgb: 129, 161, 193;
+	--color-blue-rgb: 129, 161, 193;
 	--color-blue: #81a1c1;
-  --color-purple-rgb: 180, 142, 173;
+	--color-purple-rgb: 180, 142, 173;
 	--color-purple: #b48ead;
-  --color-pink-rgb: 191, 136, 188;
+	--color-pink-rgb: 191, 136, 188;
 	--color-pink: #bf88bc;
 
 	/* Base colors */
@@ -117,27 +117,27 @@
 	--ansi-bright-cyan-dim: #8fbcbb80;
 	--ansi-bright-white: #eceff4;
 	--ansi-bright-white-dim: #eceff480;
-  
-  .prose {
-      --tw-prose-body: #4c566a;
-			--tw-prose-headings: #2e3440;
-			--tw-prose-lead: #434c5e;
-			--tw-prose-links: #5e81ac;
-			--tw-prose-bold: #2e3440;
-			--tw-prose-counters: #4c566a;
-			--tw-prose-bullets: #d8dee9;
-			--tw-prose-hr: #e5e9f0;
-			--tw-prose-quotes: #2e3440;
-			--tw-prose-quote-borders: #e5e9f0;
-			--tw-prose-captions: #4c566a;
-			--tw-prose-kbd: #2e3440;
-			--tw-prose-kbd-shadows: 35 52 64;
-			--tw-prose-code: #bf616a;
-			--tw-prose-pre-code: #eceff4;
-			--tw-prose-pre-bg: #3b4252;
-			--tw-prose-th-borders: #d8dee9;
-			--tw-prose-td-borders: #e5e9f0;
-  }
+
+	.prose {
+		--tw-prose-body: #4c566a;
+		--tw-prose-headings: #2e3440;
+		--tw-prose-lead: #434c5e;
+		--tw-prose-links: #5e81ac;
+		--tw-prose-bold: #2e3440;
+		--tw-prose-counters: #4c566a;
+		--tw-prose-bullets: #d8dee9;
+		--tw-prose-hr: #e5e9f0;
+		--tw-prose-quotes: #2e3440;
+		--tw-prose-quote-borders: #e5e9f0;
+		--tw-prose-captions: #4c566a;
+		--tw-prose-kbd: #2e3440;
+		--tw-prose-kbd-shadows: 35 52 64;
+		--tw-prose-code: #bf616a;
+		--tw-prose-pre-code: #eceff4;
+		--tw-prose-pre-bg: #3b4252;
+		--tw-prose-th-borders: #d8dee9;
+		--tw-prose-td-borders: #e5e9f0;
+	}
 }
 
 @media (prefers-color-scheme: dark) {
@@ -236,8 +236,8 @@
 		--shiki-ansi-bright-cyan-dim: #8fbcbb80;
 		--shiki-ansi-bright-white: #eceff4;
 		--shiki-ansi-bright-white-dim: #eceff480;
-    
-    .prose {
+
+		.prose {
 			--tw-prose-body: #d8dee9;
 			--tw-prose-headings: #eceff4;
 			--tw-prose-lead: #e5e9f0;
@@ -256,6 +256,6 @@
 			--tw-prose-pre-bg: rgb(46 52 64 / 50%);
 			--tw-prose-th-borders: #4c566a;
 			--tw-prose-td-borders: #3b4252;
-    }
+		}
 	}
 }

@@ -1,0 +1,13 @@
+/* Scale REM to 75% */
+
+@theme {
+	--breakpoint-sm: calc(40rem * 0.75);
+	--breakpoint-md: calc(48rem * 0.75);
+	--breakpoint-lg: calc(64rem * 0.75);
+	--breakpoint-xl: calc(80rem * 0.75);
+	--breakpoint-2xl: calc(96rem * 0.75);
+}
+
+html {
+	font-size: 75%;
+}
