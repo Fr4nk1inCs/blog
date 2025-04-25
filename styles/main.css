@@ -3,6 +3,7 @@
 @import "./nord.css";
 @import "./callouts.css";
 @import "./syntax-theme.css";
+@import "./scale.css";
 
 @plugin "@tailwindcss/typography";
 
@@ -62,7 +63,11 @@ main {
 }
 
 .prose {
-	@apply xl:max-w-[72ch];
+	@apply xl:max-w-[96ch] max-w-[80ch];
+}
+
+blockquote {
+  @apply font-normal;
 }
 
 details {
