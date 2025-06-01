@@ -110,18 +110,18 @@ pre[data-name] {
 
 	&::before {
 		content: attr(data-name);
-		@apply absolute -top-[1px] -left-[1px] bg-[#3e4a5b] px-2 py-1 rounded-tl font-mono;
+		@apply absolute -top-[1px] -left-[1px] bg-[#3e4a5b] px-2 py-1 rounded-tl font-mono text-sm leading-4;
 	}
 }
 
 pre,
 code {
-	line-height: 1.2;
+	@apply text-base leading-6.5;
 }
 
 pre {
 	table {
-		@apply m-0 w-full border-collapse;
+		@apply m-0 w-full border-collapse text-base leading-6.5;
 
 		tr {
 			@apply w-full border-none;
