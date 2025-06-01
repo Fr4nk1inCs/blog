@@ -2,6 +2,7 @@
 title = "Template"
 description = "A template post that presents the features of this blog."
 date = 2025-03-10
+render = false
 
 [taxonomies]
 tags = ["template"]
@@ -30,19 +31,21 @@ $$
 ```
 
 > This is an example of a block math equation:
-> 
+>
 > $$
 > E = m c^2
 > $$
 
 You can also render typst documents:
 
-~~~md
+````md
 ```typ,include=images/test.typ
+
 ```
-~~~
+````
 
 ```typ,include=images/test.typ
+
 ```
 
 ### Code
@@ -86,4 +89,3 @@ fn main() {
     println!("Hello, World!");
 }
 ```
-
