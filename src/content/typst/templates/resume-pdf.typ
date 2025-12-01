@@ -7,6 +7,8 @@
   font-size: 12pt,
   title-size: 24pt,
   paper: "us-letter",
+  margin: 0.75in,
+  extra-page-settings: (),
   accent: rgb(0, 0, 0),
   lang: "en",
   contact-infos: (:),
@@ -20,16 +22,16 @@
     lang: lang,
     ligatures: false,
   )
-  set page(paper: paper, margin: 0.75in)
+  set page(paper: paper, margin: margin, ..extra-page-settings)
   set par(linebreaks: "optimized", justify: true)
 
   show heading: set text(fill: accent)
 
   show heading.where(level: 1): set text(size: title-size)
   show heading.where(level: 1): set align(center)
-  show heading.where(level: 2): it => {
+  show heading.where(level: 2): it => context {
     pad(top: 0pt, bottom: -font-size, [#smallcaps(it.body)])
-    line(length: 100%, stroke: 1pt)
+    line(length: 100%, stroke: 1pt + text.fill)
   }
 
   let contact-contents = contact(infos: contact-infos, fa-icon: fa-icon)

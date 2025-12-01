@@ -63,6 +63,9 @@ export default defineConfig({
   },
   vite: {
     plugins: [tailwindcss()],
+    ssr: {
+      external: ['@myriaddreamin/typst-ts-node-compiler'],
+    },
   },
   integrations: [
     sitemap(),
@@ -79,7 +82,18 @@ export default defineConfig({
       plugins: [pluginLineNumbers()],
     }), // Must come after expressive-code integration
     mdx(),
-    typst(),
+    typst({
+      options: {
+        remPx: 16,
+        width: '100%',
+        height: 'auto',
+      },
+      fontArgs: [
+        {
+          fontPaths: ['./public/fonts'],
+        },
+      ],
+    }),
   ],
   experimental: {
     contentIntellisense: true,
