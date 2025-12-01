@@ -1,9 +1,10 @@
 ---
 title: 'Showing Off Blog Features'
 published: 2025-07-20
-draft: false
+draft: true
 tags: ['astro', 'demo', 'markdown']
 toc: true
+hide: true
 ---
 
 Since the post does not have a description in the frontmatter, the first paragraph is used.
