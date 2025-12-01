@@ -1,0 +1,13 @@
+---
+import MarkdownLayout from '../layouts/MarkdownLayout.astro'
+import Resume from '../content/typst/resume.typ?html'
+
+const frontmatter = {
+  title: 'Resume',
+  description: 'My professional resume',
+}
+---
+
+<MarkdownLayout frontmatter={frontmatter}>
+  <Resume />
+</MarkdownLayout>

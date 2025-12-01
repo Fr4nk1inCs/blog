@@ -23,6 +23,7 @@ import remarkMath from 'remark-math' /* for latex math support */
 import rehypeKatex from 'rehype-katex' /* again, for latex math support */
 import remarkGemoji from './src/plugins/remark-gemoji' /* for shortcode emoji support */
 import rehypePixelated from './src/plugins/rehype-pixelated' /* Custom plugin to handle pixelated images */
+import { typst } from 'astro-typst'
 
 // https://astro.build/config
 export default defineConfig({
@@ -78,6 +79,7 @@ export default defineConfig({
       plugins: [pluginLineNumbers()],
     }), // Must come after expressive-code integration
     mdx(),
+    typst(),
   ],
   experimental: {
     contentIntellisense: true,

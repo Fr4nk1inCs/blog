@@ -29,6 +29,30 @@
   src: url('/fonts/LXGWZhenKaiGB-Regular.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'Font Awesome 7 Brands';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url('/fonts/Font Awesome 7 Brands-Regular-400.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Font Awesome 7 Free';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url('/fonts/Font Awesome 7 Free-Regular-400.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Font Awesome 7 Free';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 900;
+  src: url('/fonts/Font Awesome 7 Free-Solid-900.otf') format('opentype');
+}
+
 @theme {
   --color-accent: var(--theme-accent);
   --color-foreground: var(--theme-foreground);
@@ -236,8 +260,11 @@ article img {
   h1 {
     @apply text-[1.75rem] text-heading1 mt-8;
 
-    &::before {
-      @apply mr-2 content-['#'];
+    &:hover {
+      @apply relative;
+      ::before {
+        @apply absolute content-['#'] -left-5;
+      }
     }
 
     .heading-anchor svg {
@@ -248,8 +275,11 @@ article img {
   h2 {
     @apply text-[1.6rem] text-heading2 mt-12;
 
-    &::before {
-      @apply mr-2 content-['##'];
+    &:hover {
+      @apply relative;
+      ::before {
+        @apply absolute content-['##'] -left-9;
+      }
     }
 
     .heading-anchor svg {
@@ -260,8 +290,11 @@ article img {
   h3 {
     @apply text-2xl text-heading3 mt-10;
 
-    &::before {
-      @apply mr-2 content-['###'];
+    &:hover {
+      @apply relative;
+      ::before {
+        @apply absolute content-['###'] -left-13;
+      }
     }
 
     .heading-anchor svg {
@@ -272,8 +305,11 @@ article img {
   h4 {
     @apply text-2xl text-heading4 mt-8;
 
-    &::before {
-      @apply mr-2 content-['####'];
+    &:hover {
+      @apply relative;
+      ::before {
+        @apply absolute content-['####'] -left-17;
+      }
     }
 
     .heading-anchor svg {
@@ -284,8 +320,11 @@ article img {
   h5 {
     @apply text-lg text-heading5;
 
-    &::before {
-      @apply mr-2 content-['#####'];
+    &:hover {
+      @apply relative;
+      ::before {
+        @apply absolute content-['#####'] -left-21;
+      }
     }
 
     .heading-anchor svg {
@@ -296,8 +335,11 @@ article img {
   h6 {
     @apply text-lg text-heading6;
 
-    &::before {
-      @apply mr-2 content-['######'];
+    &:hover {
+      @apply relative;
+      ::before {
+        @apply absolute content-['######'] -left-25;
+      }
     }
 
     .heading-anchor svg {
@@ -374,7 +416,7 @@ article img {
   aside {
     @apply px-7 md:px-6 rounded-xl py-6;
 
-    & > *:not(div.expressive-code, img, figure, video, hr),
+    & > *:not(div.expressive-code, img, figure, video, hr, a),
     figcaption {
       @apply md:mx-2;
     }
