@@ -167,6 +167,7 @@ export type GiscusConfig = {
 export interface SiteConfig {
   site: string
   font: string
+  fontMono: string
   title: string
   description: string
   author: string
