@@ -72,6 +72,9 @@ export default defineConfig({
         showLineNumbers: false,
         wrap: false,
       },
+      styleOverrides: {
+        codeFontSize: '0.9rem',
+      },
       plugins: [pluginLineNumbers()],
     }), // Must come after expressive-code integration
     mdx(),
