@@ -1,4 +1,3 @@
-
 #import "templates/mod.typ": sys-is-html-target
 #import "templates/resume-pdf.typ": entries as pdf-entries, style as pdf-style
 #import "templates/resume-html.typ": entries as html-entries, style as html-style
@@ -42,19 +41,18 @@ LLM inference optimization, System for MoE.
 
 == Publications
 
-Jin, Z., #underline[*Fu, S.*], Tang, C., Bai, Y., Wang, S., Zhu, J., Fang, C., Gong, P., & Li, C. (2025). SMIDT: High-Performance Inference Framework for MoE Models with Dynamic Top-K Routing. (Under review)
+#[
+  #show "Shen Fu": strong
+  #show "Shen Fu": underline
+  #bibliography(
+    "reference.bib",
+    style: "association-for-computing-machinery",
+    full: true,
+    title: none,
+  )
+]
 
 == Education
-
-#edu-entry(
-  university: "University of Science and Technology of China",
-  location: "Hefei, Anhui",
-  degree: "B.E. in Computer Science and Technology",
-  begin: "Sep 2020",
-  end: "Jun 2024",
-)
-- #link("https://sgy.ustc.edu.cn")[School of the Gifted Young]
-- GPA: 3.92/4.30, Rank: top 8%
 
 #edu-entry(
   university: "University of Science and Technology of China",
@@ -65,6 +63,16 @@ Jin, Z., #underline[*Fu, S.*], Tang, C., Bai, Y., Wang, S., Zhu, J., Fang, C., G
 )
 - Advisor: Prof. #link("https://cs.ustc.edu.cn/2020/0828/c23239a615416/pagem.htm")[Cheng Li]
 - GPA: 4.13/4.30
+
+#edu-entry(
+  university: "University of Science and Technology of China",
+  location: "Hefei, Anhui",
+  degree: "B.E. in Computer Science and Technology",
+  begin: "Sep 2020",
+  end: "Jun 2024",
+)
+- #link("https://sgy.ustc.edu.cn")[School of the Gifted Young]
+- GPA: 3.92/4.30, Rank: top 8%
 
 == Honors & Scholarships
 
