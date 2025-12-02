@@ -107,7 +107,6 @@ body {
   @apply transition-colors;
   font-display: block;
   font-size-adjust: from-font var(--theme-font);
-  text-align: justify;
 }
 
 input:focus-visible,
@@ -153,7 +152,7 @@ article img {
 }
 
 .prose {
-  @apply text-base/7;
+  @apply text-base/7 text-justify;
 
   code:not(.expressive-code code) {
     @apply text-sm text-foreground/90 bg-foreground/5 px-2 py-1 rounded-lg whitespace-nowrap;

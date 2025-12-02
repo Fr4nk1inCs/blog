@@ -8,6 +8,7 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import expressiveCode from 'astro-expressive-code'
 import siteConfig from './src/site.config'
 import { pluginLineNumbers } from '@expressive-code/plugin-line-numbers'
+import { pluginCollapsibleSections } from '@expressive-code/plugin-collapsible-sections'
 import remarkDescription from './src/plugins/remark-description' /* Add description to frontmatter */
 import remarkReadingTime from './src/plugins/remark-reading-time' /* Add reading time to frontmatter */
 import rehypeTitleFigure from './src/plugins/rehype-title-figure' /* Wraps titles in figures */
@@ -75,11 +76,12 @@ export default defineConfig({
       defaultProps: {
         showLineNumbers: false,
         wrap: false,
+        collapseStyle: 'collapsible-auto',
       },
       styleOverrides: {
         codeFontSize: '0.9rem',
       },
-      plugins: [pluginLineNumbers()],
+      plugins: [pluginLineNumbers(), pluginCollapsibleSections()],
     }), // Must come after expressive-code integration
     mdx(),
     typst({
