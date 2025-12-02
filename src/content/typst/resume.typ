@@ -84,7 +84,7 @@ LLM inference optimization, System for MoE.
 
 == Miscellaneous
 
-#strong(smallcaps[Service])
+#strong(smallcaps[Services])
 - USENIX ATC #(sym.quote.single.r)25 Artifact Evaluation Committee
 
 #strong(smallcaps[Teaching])
