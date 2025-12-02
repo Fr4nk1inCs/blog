@@ -152,7 +152,7 @@ article img {
 }
 
 .prose {
-  @apply text-base/7 text-justify;
+  @apply text-base/7;
 
   code:not(.expressive-code code) {
     @apply text-sm text-foreground/90 bg-foreground/5 px-2 py-1 rounded-lg whitespace-nowrap;
@@ -261,6 +261,7 @@ article img {
 
     &:hover {
       @apply relative;
+
       ::before {
         @apply absolute content-['#'] -left-5;
       }
@@ -276,6 +277,7 @@ article img {
 
     &:hover {
       @apply relative;
+
       ::before {
         @apply absolute content-['##'] -left-9;
       }
@@ -291,6 +293,7 @@ article img {
 
     &:hover {
       @apply relative;
+
       ::before {
         @apply absolute content-['###'] -left-13;
       }
@@ -306,6 +309,7 @@ article img {
 
     &:hover {
       @apply relative;
+
       ::before {
         @apply absolute content-['####'] -left-17;
       }
@@ -321,6 +325,7 @@ article img {
 
     &:hover {
       @apply relative;
+
       ::before {
         @apply absolute content-['#####'] -left-21;
       }
@@ -336,6 +341,7 @@ article img {
 
     &:hover {
       @apply relative;
+
       ::before {
         @apply absolute content-['######'] -left-25;
       }
