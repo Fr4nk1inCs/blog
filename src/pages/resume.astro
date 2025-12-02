@@ -1,39 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import type { TypstDocInput } from 'astro-typst/dist/lib/prelude'
-import { Typst } from 'astro-typst/src/components'
-import siteConfig from '~/site.config'
-import { resolveThemeColorStyles } from '~/utils'
-
-const defaultTheme =
-  siteConfig.themes.default === 'auto'
-    ? siteConfig.themes.include[0]
-    : siteConfig.themes.default
-
-const themeStyles = await resolveThemeColorStyles(
-  [defaultTheme],
-  siteConfig.themes.overrides,
-)
-const fg = themeStyles[defaultTheme]?.foreground
-const accent = themeStyles[defaultTheme]?.accent
-
-const input: TypstDocInput = {
-  mainFilePath: 'src/content/typst/resume.typ',
-  inputs: {
-    'svg-in-html': 'true',
-    'main-color': fg!,
-    'accent-color': accent!,
-  },
-}
+import Resume from '../content/typst/resume.typ?html'
 ---
 
 <Layout title="Resume">
-  <div class="max-w-full prose">
-    <blockquote class="!mb-0">
-      <p>
-        You can get a PDF version <a href="/resume.pdf">here</a>.
-      </p>
-    </blockquote>
-    <Typst input={input} height="auto" width="100%" />
+  <div class="prose">
+    <Resume />
   </div>
 </Layout>

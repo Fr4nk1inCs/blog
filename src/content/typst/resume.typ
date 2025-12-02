@@ -1,11 +1,18 @@
-#import "templates/mod.typ": sys-is-svg-in-html
-#import "templates/resume-pdf.typ": entries, style
+#import "templates/mod.typ": sys-is-html-target
+#import "templates/resume-pdf.typ": entries as pdf-entries, style as pdf-style
+#import "templates/resume-html.typ": entries as html-entries, style as html-style
 
-#let edu-entry = entries.edu
-#let work-entry = entries.work
-#let project-entry = entries.project
-#let annotated-entry = entries.annotated
-
+#let (style, edu-entry, work-entry, project-entry, annotated-entry) = if sys-is-html-target {
+  (html-style, html-entries.edu, html-entries.work, html-entries.project, html-entries.annotated)
+} else {
+  (
+    pdf-style.with(accent: rgb("#26428b"), font: ("Libertinus Serif", "SongTi SC"), paper: "us-letter"),
+    pdf-entries.edu,
+    pdf-entries.work,
+    pdf-entries.project,
+    (annotated, body) => (body + h(1fr) + annotated),
+  )
+}
 #set text(fill: rgb(sys.inputs.at("main-color", default: "#000000")))
 
 #show: style.with(
@@ -15,16 +22,6 @@
     email: "sh.fu@outlook.com",
     github: "Fr4nk1inCs",
   ),
-  paper: "us-letter",
-  margin: if sys-is-svg-in-html { (x: 0pt, y: 20pt) } else { 0.75in },
-  extra-page-settings: if sys-is-svg-in-html {
-    (height: auto)
-  } else {
-    ()
-  },
-  accent: rgb(sys.inputs.at("accent-color", default: "#26428b")),
-  font-size: if sys-is-svg-in-html { 16pt } else { 12pt },
-  font: "Libertinus Serif",
 )
 
 == Research Interests
@@ -40,17 +37,17 @@ LLM inference optimization, System for MoE.
   begin: "Mar 2025",
   end: "Aug 2025",
 )
-- An inference framework for dymamic top-$k$ routing MoE models, which automatically plans parallelism strategies to maximize throughput on prefill-dominated workloads.
-- Paricipated in the implementation of the model profiler, adoption of dynamic top-$k$ routing, pipeline parallelism enhancements, and the design of the parallelism planner.
+- An inference framework for dymamic top-k routing MoE models, which automatically plans parallelism strategies to maximize throughput on prefill-dominated workloads.
+- Paricipated in the implementation of the model profiler, adoption of dynamic top-k routing, pipeline parallelism enhancements, and the design of the parallelism planner.
 
 == Publications
 
 #[
-  #show "Shen Fu": strong
-  #show "Shen Fu": underline
+  #show "Fu, S.": strong
+  #show "Fu, S.": underline
   #bibliography(
     "reference.bib",
-    style: "association-for-computing-machinery",
+    style: "./apa-cv.csl",
     full: true,
     title: none,
   )

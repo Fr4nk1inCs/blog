@@ -7,8 +7,6 @@
   font-size: 12pt,
   title-size: 24pt,
   paper: "us-letter",
-  margin: 0.75in,
-  extra-page-settings: (),
   accent: rgb(0, 0, 0),
   lang: "en",
   contact-infos: (:),
@@ -22,7 +20,7 @@
     lang: lang,
     ligatures: false,
   )
-  set page(paper: paper, margin: margin, ..extra-page-settings)
+  set page(paper: paper)
   set par(linebreaks: "optimized", justify: true)
 
   show heading: set text(fill: accent)
